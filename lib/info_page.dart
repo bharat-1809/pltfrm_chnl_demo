@@ -30,7 +30,7 @@ class _InfoPageBodyState extends State<InfoPageBody> {
     try {
       final result = await _platform.invokeMethod("getBatteryLevel");
       batteryLvl = result;
-    } on PlatformException catch (e) {
+    } on PlatformException {
       batteryLvl = -1;
     }
 
@@ -44,7 +44,7 @@ class _InfoPageBodyState extends State<InfoPageBody> {
     try {
       final result = await _platform.invokeMethod("getBatteryStatus");
       batteryStatus = result;
-    } on PlatformException catch (e) {
+    } on PlatformException {
       batteryStatus = -1;
     }
 
